@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>草莓TV—一个经典的视频网站、海量高清视频在线观看</title>
+    <style>
+        .all{
+            width:1000px;
+            height: 1500px;
+            margin:0 auto;
+            background:#F5F5F5;
+        }
+        .up{
+            display:none;
+            width:40px;
+            height:40px;
+            background:url(img/logoa.png);
+            position: fixed;
+            right:10px;
+            bottom:20px;
+        }
+        .top{
+            width:1000px;
+            margin:0 auto;
+            height:30px;
+        }
+        .login{
+            float:right;
+            margin-right: 10px;
+        }
+        .logo{
+            height:100px;
+            width:100px;
+            float:left;
+            margin-left: 50px;
+        }
+        a{
+            color:gray;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .title{           
+            width:800px;
+        }
+        .con{
+            width:800px;
+        }
+        .tou{
+            height:400px;
+        }
+        .nav{
+            height:30px;
+            margin-top: 50px;
+        }
+        .nav li{
+            float: right;
+            width:70px ;
+            height: 80px;
+            text-align: center;
+            line-height: 40px;
+            list-style-type: none;
+        }
+        .nav a{
+            color:black;
+            font-size:20px;
+            text-decoration:none;
+        }
+        .banner {
+            height: 420px;
+            width:1000px;
+            position:absolute;
+        }
+        .banner-in {
+            height: 420px ;
+            position: relative;
+        }
+        .guide {
+            height: 450px;
+            width: 190px;
+            float: left;
+            margin-top: 50px;
+        }
+        .guide li{
+            list-style-type: none;
+            margin-top:12px;
+        }	
+        .guide li a {
+            color:black;
+            font-size: 20px;
+            padding: 0 15px; 
+            display: block;
+            height: 40px;
+            line-height: 40px; 	 
+            text-decoration: none;   
+        }
+        .guide li:hover>a{
+            color: orange;
+        }
+        #image{
+            background-image: url(img/e.png);
+            width: 800px;
+            height:400px;
+            float:right;
+            margin-top: 50px;
+            background-repeat: no-repeat;
+        }
+        .normal{
+            width: 1000px;
+            margin-top:120px;
+            margin-left: 40px;
+        }
+        .opera{
+            float: left;
+            width: 228px;
+            height: 350px;
+            margin: 15px 6px; 
+            box-shadow:0px 2px 4px 0px rgba(118,118,118,0.5);
+        }
+        .like{
+            margin-top: 30px;        
+            margin-left: 20px;
+        }
+        .love{
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        .like a{
+            font-size: 30px;
+            text-decoration: none;
+            color:black;
+        }
+        .like:hover>a{
+            color: orange;
+            border-bottom: 3px solid orange;
+        }
+        .opera img{
+            width: 228px;
+            height: 280px;
+            float: left;
+        }
+        .opera p a{
+            width:185px;
+            height:20px;
+            font-size:16px;
+            font-weight:400;
+            color:rgba(5,5,5,1);
+            line-height:20px;
+            margin-left: 5px;
+            margin-top: 25px;
+        }
+        #z1{
+            font-size:20px;
+            font-weight:400;
+            color:rgba(255,123,45,1);
+            float:left;
+            margin-left: 5px;
+        }
+        #z2{
+            font-size:12px;
+            font-weight:400;
+            color:rgba(128,128,128,1);
+            float:right;
+            margin-top: 5px;
+        }
+        .rank{
+            width:250px;
+            color:black;
+            float:right;
+            margin-right: 10px;
+        }
+        .rank li{
+            margin-bottom: 21px;
+            list-style-type: none;
+        }
+        .ran{
+            color:black;
+        }
+        .rank a{
+            font-size: 20px;
+            text-decoration: none;
+            color:black;
+        }
+        #our{
+            margin-right: 20px;
+            float: right;
+            margin-top: 230px;
+        }
+        .mo{
+            height: 200px;
+            width: 150px;
+            float: right;
+            margin-right:100px;
+        }
+        #bottom{
+            height: 100px;
+            width: 1000px;
+            margin-top: 10px;
+            margin: 0 auto;
+        }
+        #bottom li{
+            font-size:20px;
+            font-family:SimSun;
+            font-weight:400;
+            color:gray;
+            line-height:30px;
+            list-style-type:none;
+        }
+        #tv{
+            padding-top: 200px;
+            padding-left: 50px;	
+            font-size:70px;
+            font-family:Microsoft YaHei;
+            font-weight:bold;
+            color:pink;
+            line-height:21px;
+            float:left;
+        }
+        .bo{
+            width:500px;
+        }
+        .z6{
+            font-size:25px;
+            font-family:Microsoft YaHei;
+            font-weight:400;
+            color:gray;
+            line-height:25px;
+        }
+        .us{
+            padding-bottom: 30px;
+        }
+        .mo a{
+            text-decoration: none;
+            color: black;
+        }
+        .active{
+            font-size: 40px;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body class="all">
+    <div id="top" class="up" onclick="goTop()" >回到顶部</div>
+    <div class="top">
+        <div class="login">
+            <a href="">登录/注册</a>
+            <a href="">移动客户端</a>
+        </div>
+        <div class="con">
+            <div class="title">欢迎来到草莓TV-海量视频在线观看</div>
+        </div>
+    </div> 
+    <img src="img/logo.jpg" alt="" class="logo"> 
+    <div class="middle">
+        <div class="tou">
+            <div class="nav">
+                <ul class="he">
+                    <li><a href="">更多</a></li>
+                    <li><a href="">电视剧</a></li>		       
+                    <li><a href="">电影</a></li>
+                    <li><a href="">知识</a></li>
+                    <li><a href="">综艺</a></li>
+                    <li><a href="">儿童</a></li>
+                    <li><a href="">新闻</a></li>
+                    <li><a href="">动漫</a></li>
+                    <li><a href="">资讯</a></li>
+                    <li><a href="">音乐</a></li>
+                    <li><a href="">首页</a></li>
+                </ul>
+            </div>    
+            <div class="banner">
+                <div class="banner-in">
+                    <div class="guide">
+                        <ul id="ul" class="ul1">
+                            <li id="opera1"><a href="https://www.bilibili.com/bangumi/play/ep350301?from=search&seid=233927306645375975" target="_blank">天官赐福</a></li>
+                            <li id="opera2"><a href="https://v.qq.com/x/cover/mzc00200qfarw6d.html"target="_blank">金刚川</a></li>
+                            <li id="opera3"><a href="https://v.qq.com/x/cover/e7hi6lep1yc51ca/h0018p9ihom.html"target="_blank">琅琊榜</a></li>
+                            <li id="opera4"><a href="https://v.youku.com/v_show/id_XNDY4MDQwMjY0MA==.html?spm=a2h0c.8166622.PhoneSokuProgram_2.dposter&s=dfee54c74cc240e7ba04"target="_blank">琉璃</a></li>
+                            <li id="opera5"><a href="https://v.qq.com/x/cover/mzc00200jg5gfcq/u0034zxdhdi.html"target="_blank">在一起</a></li>
+                            <li id="opera6"><a href="https://v.qq.com/x/cover/mzc00200x9fxrc9/l0035xrq46y.html"target="_blank">有翡</a></li>
+                            <li id="opera7"><a href="https://v.qq.com/x/cover/9f8tpq2gly9p5ts.html"target="_blank">八佰</a></li>
+                        </ul>
+                    </div>
+                    <div id="image"></div>
+                </div>
+            </div>
+        </div>
+        <div class="normal">
+            <div class="like"><a href="">猜你喜欢></a></div>	
+            <div class="love">
+                <div class="opera">
+                    <a href="https://v.qq.com/x/cover/xmw2gfef226jygj/i00299gbm4b.html" target="_blank"><img src="img/a.png" alt=""></a>
+                    <p><a href="">知否知否，应是绿肥红瘦</a></p>
+                    <p><span id="z1">9.5</span><span id="z2">· 1125万人在看</span></p>
+                </div>
+                <div class="opera">
+                    <a href="https://v.qq.com/x/cover/rjae621myqca41h/i0032qxbi2v.html" target="_blank"><img src="img/b.png" alt=""></a>
+                    <p><a href="">庆余年第一季</a></p>
+                    <p><span id="z1">9.3</span><span id="z2">· 997万人在看</span></p>
+                </div>
+                <div class="opera">
+                    <a href="https://www.iqiyi.com/v_19rslg61as.html" target="_blank"><img src="img/c.png" alt=""></a>
+                    <p><a href="">大宋少年志</a></p>
+                    <p><span id="z1">9.1</span><span id="z2">· 867万人在看</span></p>
+                </div>
+                <div class="rank">
+                    <ul>
+                        <p class="ran"><a href="https://www.iqiyi.com/dianshiju/?vfrm=pcw_home&vfrmblk=C&vfrmrst=712211_channel_dianshiju" target="_blank">电视剧排行榜</a></p>
+                        <li><a href="https://v.qq.com/x/cover/e7hi6lep1yc51ca/h0018p9ihom.html"target="_blank">1.琅琊榜</a></li>
+                        <li><a href="https://www.iqiyi.com/v_18de8nylgnw.html" target="_blank">2.棋魂</a></li>
+                        <li><a href="https://www.iqiyi.com/v_2g5a5i86730.html" target="_blank">3.沉默的真相</a></li>
+                        <li><a href="https://www.iqiyi.com/v_19rrlkh3ag.html" target="_blank">4.请回答1988</a></li>
+                        <li><a href="https://v.qq.com/x/cover/mzc00200jg5gfcq/u0034zxdhdi.html"target="_blank">5.在一起</a></li>
+                        <li><a href="https://www.iqiyi.com/v_19rrsp0hd0.html"target="_blank">6.小欢喜</a></li>
+                        <li><a href="https://www.iqiyi.com/dianshiju/?vfrm=pcw_home&vfrmblk=C&vfrmrst=712211_channel_dianshiju" target="_blank">……</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+		<div class="bo">
+			<p id="tv">草莓TV</p>
+		</div>
+		<div id="our">
+			<div class="mo">
+				<ul>
+					<li class="us"><span class="z6">关于我们</span></li>
+					<li><a href="#">公司介绍</a></li>
+					<li><a href="#">新闻动态</a></li>
+					<li><a href="#">联系方式</a></li>
+					<li><a href="#">用户协议</a></li>
+					<li><a href="#">隐私政策</a></li>
+				</ul>
+			</div>
+			<div class="mo">
+				<ul>
+					<li class="us"><span class="z6">常见问题</span></li>
+					<li><a href="#">帮助中心</a></li>
+					<li><a href="#">侵权举报与投诉</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+    //页面首部字体滚动效果
+    var title = document.getElementsByClassName("title");
+    var time = document.getElementById("time");
+    title[0].style.marginLeft = "0px";
+    title[0].style.marginTop = "0px";
+    var intervalId = setInterval(function(){
+        var marginLeft = parseInt(title[0].style.marginLeft);
+        var marginTop = parseInt(title[0].style.marginTop);
+        title[0].style.marginLeft = (marginLeft + 1)+"px";
+        if(marginLeft >= 590){
+            title[0].style.marginLeft = "0";
+        }
+    },10)
+    //添加回到顶部按钮
+    function goTop(){
+        var top = document.getElementById("top");
+        document.documentElement.scrollTop = document.body.scrollTop = 0;
+    }
+    window.onscroll = function(){
+        var top = document.getElementById("top");
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        if(scrollTop > 300){
+            top.style.display = "block";
+        }
+        else{
+            top.style.display = "none";
+        }
+    }
+    //为列表中的元素添加动态效果
+    var liList = document.getElementsByTagName("li");
+    for(var i=0;i<liList.length;i++){
+        liList[i].onmouseover = function(){
+            this.setAttribute("class","active");
+        }
+        liList[i].onmouseout = function(){
+            this.removeAttribute("class")
+        }
+    }
+    //制作背景图
+    var opera1 = document.getElementById("opera1");
+    var opera2 = document.getElementById("opera2");
+    var opera3 = document.getElementById("opera3");
+    var opera4 = document.getElementById("opera4");
+    var opera5 = document.getElementById("opera5");
+    var opera6 = document.getElementById("opera6");
+    var opera7 = document.getElementById("opera7");
+    var image = document.getElementById("image");
+    var list = ['e','f','g','h','i','j','k'];
+    opera1.onmouseover = function(){
+        image.style.backgroundImage = "url(img/"+list[0]+".png)";
+    }
+    opera2.onmouseover = function(){
+        image.style.backgroundImage = "url(img/"+list[1]+".png)";
+    }
+    opera3.onmouseover = function(){
+        image.style.backgroundImage = "url(img/"+list[2]+".png)";
+    }
+    opera4.onmouseover = function(){
+        image.style.backgroundImage = "url(img/"+list[3]+".png)";
+    }
+    opera5.onmouseover = function(){
+        image.style.backgroundImage = "url(img/"+list[4]+".png)";
+    }
+    opera6.onmouseover = function(){
+        image.style.backgroundImage = "url(img/"+list[5]+".png)";
+    }
+    opera7.onmouseover = function(){
+        image.style.backgroundImage = "url(img/"+list[6]+".png)";
+    }
+</script>
+</html>
